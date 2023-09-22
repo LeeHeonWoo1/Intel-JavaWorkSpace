@@ -161,7 +161,7 @@ public class MyMain {
                         idx++; // idx 증가
                     }
 
-                    csd = newCsd; // csd를 새로 추가된 멤버 테이블로 업데이트
+                    csd = newCsd; // 같은 CandyCustomerInfo의 배열 형태인 newCsd로 바꾸며 값 업데이트
                     System.out.println("-------------------------------------");
                     System.out.println("회원 등록을 완료했습니다.");
                     break;
