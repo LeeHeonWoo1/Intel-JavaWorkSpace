@@ -104,8 +104,10 @@ public class MyMain {
                     int grape = intScanner.nextInt();
                     System.out.print("입고된 귤의 개수를 입력하세요 : ");
                     int tanger = intScanner.nextInt();
+                    int[] fruitArr = new int[]{straw, shine, grape, tanger};
 
                     inv.setStore(straw, shine, grape, tanger);
+                    csb.lossBudget(fruitArr);
 
                     break;
 
