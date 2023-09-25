@@ -11,6 +11,16 @@ public class CandyStoreBudget extends Inventory{
         return budget;
     }
 
+    public void lossBudget(int ... values){
+        int sum = 0;
+        int[] priceList = this.getPriceList();
+        for (int i = 0; i < values.length; i++) {
+            sum += priceList[i]*values[i];
+        }
+
+        budget -= sum;
+    }
+
     private int[] getPriceList(){
         return new int[]{strawPrice, shinePrice, grapePrice, tangerPrice};
     }
@@ -30,14 +40,14 @@ public class CandyStoreBudget extends Inventory{
 
         int[] priceList = this.getPriceList();
         int totalPrice = 0;
-        System.out.println("--------------------------------------------");
-        System.out.println("                  거래전표                    ");
-        System.out.println("--------------------------------------------");
+        System.out.println("----------------------------------------------");
+        System.out.println("                    거래전표                    ");
+        System.out.println("----------------------------------------------");
         System.out.println("상품명\t\t가격\t\t\t\t상품수량\t\t가격");
-        System.out.println("--------------------------------------------");
+        System.out.println("----------------------------------------------");
 
         for(int i : result){
-            if (i-1 > 0){
+            if (i-1 != -1){
                 if(fruits[i-1].equals("샤인머스켓")){
                     System.out.printf("%s\t%d\t\t\t%d\t\t\t%d\n", fruits[i-1], priceList[i-1], fruitCnt[i-1], priceList[i-1]*fruitCnt[i-1]);
                 }else{
@@ -47,11 +57,11 @@ public class CandyStoreBudget extends Inventory{
             }
         }
 
-        System.out.println("--------------------------------------------");
-        System.out.println("                  구매금액                    ");
-        System.out.println("--------------------------------------------");
-        System.out.printf("                   %d                    \n", totalPrice);
-        System.out.println("--------------------------------------------");
+        System.out.println("----------------------------------------------");
+        System.out.println("                    구매금액                    ");
+        System.out.println("----------------------------------------------");
+        System.out.printf("                     %d                    \n", totalPrice);
+        System.out.println("----------------------------------------------");
 
         budget += totalPrice;
 
