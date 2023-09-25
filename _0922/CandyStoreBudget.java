@@ -37,7 +37,7 @@ public class CandyStoreBudget extends Inventory{
         System.out.println("--------------------------------------------");
 
         for(int i : result){
-            if (i-1 != -1){
+            if (i-1 > 0){
                 if(fruits[i-1].equals("샤인머스켓")){
                     System.out.printf("%s\t%d\t\t\t%d\t\t\t%d\n", fruits[i-1], priceList[i-1], fruitCnt[i-1], priceList[i-1]*fruitCnt[i-1]);
                 }else{
