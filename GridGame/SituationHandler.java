@@ -11,22 +11,22 @@ public class SituationHandler extends SetEnvironment{
         if (sight == 1){
             if(feild[locationX - grid][locationY].equals("🧨")){
                 userHp -= 10;
-                System.out.println("함정에 빠져들었습니다. hp가 10 감소합니다.");
+                System.out.println("😵‍💫 함정에 빠져들었습니다. hp가 10 감소합니다. 😵‍💫");
             }
         }else if(sight == 3){
             if(feild[locationX + grid][locationY].equals("🧨")){
                 userHp -= 10;
-                System.out.println("함정에 빠져들었습니다. hp가 10 감소합니다.");
+                System.out.println("😵‍💫 함정에 빠져들었습니다. hp가 10 감소합니다. 😵‍💫");
             }
         }else if (sight == 2){
             if(feild[locationX][locationY + grid].equals("🧨")){
                 userHp -= 10;
-                System.out.println("함정에 빠져들었습니다. hp가 10 감소합니다.");
+                System.out.println("😵‍💫 함정에 빠져들었습니다. hp가 10 감소합니다. 😵‍💫");
             }
         }else {
             if(feild[locationX][locationY - grid].equals("🧨")){
                 userHp -= 10;
-                System.out.println("함정에 빠져들었습니다. hp가 10 감소합니다.");
+                System.out.println("😵‍💫 함정에 빠져들었습니다. hp가 10 감소합니다. 😵‍💫");
             }
         }
     }
