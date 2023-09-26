@@ -19,7 +19,7 @@ public class Staff extends SelectWeapon {
             staffExp -= 100;
             FieldOfGame.userHp = 150;
 
-            System.out.println("총 무기에 대한 숙련도레벨이 증가합니다. 계수가 0.1씩 추가됩니다.");
+            System.out.println("✌️ 총 무기에 대한 숙련도레벨이 증가합니다. 계수가 0.1씩 추가됩니다. ✌️");
             System.out.println("또한, 체력의 최대치가 " + FieldOfGame.userHp +"으로 늘어나며, 회복합니다.");
             System.out.print("현재 레벨 : " + proficiency + "lv.  " + staffExp + "%\n");
 
@@ -55,7 +55,7 @@ public class Staff extends SelectWeapon {
         Scanner scanner = new Scanner(System.in);
         int copyOfHp = monsterHp;
 
-        System.out.printf("현재 몬스터의 체력은 %d입니다. \n", monsterHp);
+        System.out.printf("👿 현재 몬스터의 체력은 %d입니다. \n", monsterHp);
         while (monsterHp > 0) {
             System.out.print("타격할 스킬의 번호를 입력하세요 >> ");
             int skillNum = scanner.nextInt();
@@ -68,7 +68,7 @@ public class Staff extends SelectWeapon {
                     if (hitRate <= 70) {
                         if (skillDamage > (int)(10*skill1C)) {
                             monsterHp -= skillDamage;
-                            System.out.printf("크리티컬 히트 ! 몬스터의 체력이 %d 남았습니다.\n", monsterHp);
+                            System.out.printf("✨ 크리티컬 히트 ! ✨ 몬스터의 체력이 %d 남았습니다.\n", monsterHp);
                         }
                         else {
                             monsterHp -= skillDamage;
@@ -76,7 +76,7 @@ public class Staff extends SelectWeapon {
                         }
                     } else {
                         FieldOfGame.userHp -= monDamage;
-                        System.out.printf("타격에 실패하여 피해를 입습니다. 현재 체력이 감소합니다. 현재 체력 : %d\n", FieldOfGame.userHp);
+                        System.out.printf("🥵 타격에 실패하여 %d의 피해를 입습니다. 현재 체력이 감소합니다. 현재 체력 : %d\n", monDamage, FieldOfGame.userHp);
                     }
 
                     break;
@@ -87,14 +87,14 @@ public class Staff extends SelectWeapon {
                     if (hitRate2 <= 50) {
                         if (skillDamage2 > (int)(30*skill2C)) {
                             monsterHp -= skillDamage2;
-                            System.out.printf("크리티컬 히트 ! 몬스터의 체력이 %d 남았습니다.\n", monsterHp);
+                            System.out.printf("✨ 크리티컬 히트 ! ✨ 몬스터의 체력이 %d 남았습니다.\n", monsterHp);
                         } else {
                             monsterHp -= skillDamage2;
                             System.out.printf("스킬이 적중합니다. 몬스터의 체력이 %d 남았습니다.\n", monsterHp);
                         }
                     } else {
                         FieldOfGame.userHp -= monDamage;
-                        System.out.printf("타격에 실패하여 피해를 입습니다. 현재 체력이 감소합니다. 현재 체력 : %d\n", FieldOfGame.userHp);
+                        System.out.printf("🥵 타격에 실패하여 %d의 피해를 입습니다. 현재 체력이 감소합니다. 현재 체력 : %d\n", monDamage, FieldOfGame.userHp);
                     }
 
                     break;
@@ -105,7 +105,7 @@ public class Staff extends SelectWeapon {
                     if (hitRate3 <= 35) {
                         if (skillDamage3 > (int)(70*skill3C)) {
                             monsterHp -= skillDamage3;
-                            System.out.printf("크리티컬 히트 ! 몬스터의 체력이 %d 남았습니다.\n", monsterHp);
+                            System.out.printf("✨ 크리티컬 히트 ! ✨ 몬스터의 체력이 %d 남았습니다.\n", monsterHp);
                         }
                         else {
                             monsterHp -= skillDamage3;
@@ -113,7 +113,7 @@ public class Staff extends SelectWeapon {
                         }
                     } else {
                         FieldOfGame.userHp -= monDamage;
-                        System.out.printf("타격에 실패하여 피해를 입습니다. 현재 체력이 감소합니다. 현재 체력 : %d\n", FieldOfGame.userHp);
+                        System.out.printf("🥵 타격에 실패하여 %d의 피해를 입습니다. 현재 체력이 감소합니다. 현재 체력 : %d\n", monDamage, FieldOfGame.userHp);
                     }
 
                     break;
@@ -124,7 +124,7 @@ public class Staff extends SelectWeapon {
                     if (hitRate4 <= 30) {
                         if (skillDamage4 > (int)(65*skill4C)) {
                             monsterHp -= skillDamage4;
-                            System.out.printf("크리티컬 히트 ! 몬스터의 체력이 %d 남았습니다.\n", monsterHp);
+                            System.out.printf("✨ 크리티컬 히트 ! ✨ 몬스터의 체력이 %d 남았습니다.\n", monsterHp);
                         }
                         else {
                             monsterHp -= skillDamage4;
@@ -132,7 +132,7 @@ public class Staff extends SelectWeapon {
                         }
                     } else {
                         FieldOfGame.userHp -= monDamage;
-                        System.out.printf("타격에 실패하여 피해를 입습니다. 현재 체력이 감소합니다. 현재 체력 : %d\n", FieldOfGame.userHp);
+                        System.out.printf("🥵 타격에 실패하여 %d의 피해를 입습니다. 현재 체력이 감소합니다. 현재 체력 : %d\n", monDamage, FieldOfGame.userHp);
                     }
 
                     break;
