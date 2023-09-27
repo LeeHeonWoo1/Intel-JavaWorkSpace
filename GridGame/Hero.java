@@ -6,9 +6,15 @@ public class Hero {
     public static void main(String[] args) {
         SetEnvironment field = new SetEnvironment();
         Scanner intScanner = new Scanner(System.in);
+        Scanner strScanner = new Scanner(System.in);
         SituationHandler sit = new SituationHandler();
         Gun gun = new Gun();
         Staff staff = new Staff();
+
+        System.out.print("플레이어의 이름을 입력하세요 : ");
+        String userName = strScanner.nextLine();
+
+        System.out.println("👊 게임을 시작합니다 ! 👊");
 
         System.out.print("설정할 함정의 개수를 입력하세요 : ");
         int trapCnt = intScanner.nextInt();
@@ -23,14 +29,9 @@ public class Hero {
         sit.setBossLocation(monCnt);
 
         boolean flag = true;
+        boolean flag2 = true;
 
-        while (flag){
-//            sit.getFeild();
-            if (FieldOfGame.userHp <= 0){
-                System.out.println("hp가 모두 소진되었습니다. 게임을 종료합니다.");
-                flag = false;
-            }
-
+        while (flag && flag2){
             sit.getStation(); 
             System.out.print("1. 12시 이동\n2. 3시 이동\n3. 6시 이동\n4. 9시 이동\n5. 맵 확인하기(포인트 차감)\n6. 숙련도 레벨 증가\n>>>  ");
             int sight = intScanner.nextInt(); // 1 : 12시, 2 : 3시, 3 : 6시, 4 : 9시
@@ -40,7 +41,7 @@ public class Hero {
                     int yPoint = intScanner.nextInt();
                     flag = sit.isEscape(yPoint, sight);
                     sit.isTrapped(yPoint, sight);
-                    sit.isEncounter(yPoint, sight);
+                    flag2 = sit.isEncounter(yPoint, sight, userName);
                     field.moveY(yPoint, sight);
                     break;
 
@@ -49,7 +50,7 @@ public class Hero {
                     int xPoint = intScanner.nextInt();
                     flag = sit.isEscape(xPoint, sight);
                     sit.isTrapped(xPoint, sight);
-                    sit.isEncounter(xPoint, sight);
+                    flag2 = sit.isEncounter(xPoint, sight, userName);
                     field.moveX(xPoint, sight);
                     break;
 
@@ -58,7 +59,7 @@ public class Hero {
                     int yPoint2 = intScanner.nextInt();
                     flag = sit.isEscape(yPoint2, sight);
                     sit.isTrapped(yPoint2, sight);
-                    sit.isEncounter(yPoint2, sight);
+                    flag2 = sit.isEncounter(yPoint2, sight, userName);
                     field.moveY(yPoint2, sight);
                     break;
 
@@ -67,7 +68,7 @@ public class Hero {
                     int xPoint2 = intScanner.nextInt();
                     flag = sit.isEscape(xPoint2, sight);
                     sit.isTrapped(xPoint2, sight);
-                    sit.isEncounter(xPoint2, sight);
+                    flag2 = sit.isEncounter(xPoint2, sight, userName);
                     field.moveX(xPoint2, sight);
                     break;
 
