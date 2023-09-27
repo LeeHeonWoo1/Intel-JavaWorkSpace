@@ -5,7 +5,6 @@ public class FieldOfGame {
     static int locationX = 15;
     static int locationY = 0;
     static int userHp = 100;
-    static int exp = 0;
     static int point = 0;
 
     public void setFeild(){
@@ -79,7 +78,7 @@ public class FieldOfGame {
 
     public void getStation(){
         System.out.println("-------------상황발생-------------");
-        if (locationY == feild[0].length){
+        if (locationY >= feild[0].length){
             System.out.println("전방은 막혀있는 상태입니다.");
         }else if (!(feild[locationX][locationY+1].equals("🟦"))){
             System.out.println("전방에 특별 요인이 존재합니다.");
@@ -91,7 +90,7 @@ public class FieldOfGame {
             System.out.println("후방에 특별 요인이 존재합니다.");
         }
 
-        if (locationX == feild.length){
+        if (locationX >= feild.length){
             System.out.println("우측은 막혀있는 상태입니다.");
         }else if (!(feild[locationX+1][locationY].equals("🟦"))){
             System.out.println("우측에 특별 요인이 존재합니다.");
