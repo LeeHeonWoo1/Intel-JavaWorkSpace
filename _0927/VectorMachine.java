@@ -11,7 +11,7 @@ public class VectorMachine {
 
     VectorMachine(String str){ // 생성자 오버로딩을 통해 사용자에게서 입력을 받은 문자열을
 
-        String[] strV = str.replaceAll("[^0-9,]", "").split(","); // 숫자와 콤마를 제외하고 모두 제거하여 ,를 기준으로 split을 하고
+        String[] strV = str.replaceAll("[^0-9,.]", "").split(","); // 숫자와 콤마를 제외하고 모두 제거하여 ,를 기준으로 split을 하고
         this.vector = new double[strV.length];
 
         for(int i=0;i<this.vector.length;i++) // 벡터 배열의 길이만큼 순회하면서
