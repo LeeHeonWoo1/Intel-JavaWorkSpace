@@ -8,11 +8,14 @@ public class UseFan {
 
         cooler = new Fan();
         cooler.turnOn();
+        cooler.powerUp();
+        cooler.powerDown();
+        cooler.powerSet(12);
         cooler.turnOff();
 
-        cooler = new AirConditioner();
-        cooler.turnOn();
-        cooler.turnOff();
+//        cooler = new AirConditioner();
+//        cooler.turnOn();
+//        cooler.turnOff();
 
     }
 }
