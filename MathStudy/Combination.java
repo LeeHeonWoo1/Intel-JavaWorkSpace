@@ -9,7 +9,6 @@ public class Combination implements Percentage{
 
         for (int i = y; i >= 1 ; i--)
             r *= i;
-
         result = per.oper(x, y) / r;
 
         return result;
