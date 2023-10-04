@@ -1,10 +1,10 @@
 package _1004;
 
-import java.sql.SQLOutput;
 
 // 상속 시에 extends를 붙였던 것 처럼 interface의 구조에 맞게 구현한다는 의미로 implements를 붙인다.
 public class Fan implements MakeInterface{
     int powerLevel = 0;
+    boolean isDirect = false;
 
     public void turnOn(){
         System.out.println("선풍기를 작동합니다.");
@@ -32,5 +32,13 @@ public class Fan implements MakeInterface{
             powerLevel = level;
             System.out.printf("바람 세기를 %d단계로 설정합니다.\n", level);
         }
+    }
+
+    public boolean getStation(){
+        return isDirect;
+    }
+
+    public void setStation(boolean f){
+        isDirect = f;
     }
 }
