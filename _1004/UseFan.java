@@ -11,11 +11,16 @@ public class UseFan {
         cooler.powerUp();
         cooler.powerDown();
         cooler.powerSet(12);
+        cooler.setStation(cooler.setAirDirection(cooler.getStation()));
+        cooler.setStation(cooler.setAirDirection(cooler.getStation()));
+        MakeInterface.speakBook();
         cooler.turnOff();
 
-//        cooler = new AirConditioner();
-//        cooler.turnOn();
-//        cooler.turnOff();
+        cooler = new AirConditioner();
+        cooler.turnOn();
+        cooler.setStation(cooler.setAirDirection(cooler.getStation()));
+        cooler.setStation(cooler.setAirDirection(cooler.getStation()));
+        cooler.turnOff();
 
     }
 }
