@@ -30,14 +30,16 @@ public class Transformer {
     }
 
     public int power(int x, int y) {
-        int result = 1;
+        int result;
 
-        if (y == 0)
-            return 1;
-
-        for (int i = 0; i < y; i++)
-            result *= x;
-
+        if (y != 0) {
+            result = 1;
+            for (int i = 0; i < y; i++)
+                result *= x;
+        }
+        else {
+            result = 1;
+        }
         return result;
     }
 
