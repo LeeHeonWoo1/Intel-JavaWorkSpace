@@ -1,6 +1,7 @@
 package _1006;
 
 import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.io.IOException;
 
 public class HandlingFiles {
@@ -12,7 +13,7 @@ public class HandlingFiles {
 
         // 스트림을 통해 데이터를 주고받을때는 버퍼 메모리에 저장된다.
         try{
-            FileOutputStream fos = new FileOutputStream("./_1006/test.md");
+            OutputStream fos = new FileOutputStream("./_1006/test.md");
 
             byte a = 10;
             byte b = 20;
