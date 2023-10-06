@@ -28,22 +28,7 @@ public class BinaryAndHex {
             case "16진수":
                 System.out.print("변환할 숫자를 입력하세요 : ");
                 int userInput2 = intScanner.nextInt();
-                String result2 = "";
-
-                while (userInput2 >= 1){
-                    int remain = userInput2 % 16;
-
-                    if (remain >= 10)
-                        result2 += (char)(remain + 55);
-                    else
-                        result2 += remain;
-
-                    userInput2 /= 16;
-                }
-
-                char[] arr2 = result2.toCharArray();
-                for (int i = arr2.length - 1; i >=0  ; i--)
-                    System.out.print(arr2[i]);
+                trans.transform(16, userInput2);
 
                 break;
         }
