@@ -20,7 +20,7 @@ public class ReadByte {
             }
 
             fis.close();
-        }catch(FileNotFoundException e){
+        }catch(FileNotFoundException e){ //
             System.out.println(e.fillInStackTrace());
         }catch (IOException e){
             e.printStackTrace();
