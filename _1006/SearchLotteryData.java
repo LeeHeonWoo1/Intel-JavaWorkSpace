@@ -23,24 +23,23 @@ public class SearchLotteryData {
                 str += (char)data;
             }
 
-            // 1차적으로 줄바꿈 기호를 제거하고, 숫자와 콤마를 제외한 문자들은 ,로 split하기 위해서 ,로 변경
             str = str.replace("\n", "").replaceAll("[^0-9,]", ",");
-            String[] _1dArray = str.split(",");               // 1차원 배열을 생성하고
-            String[][] _2dArray = new String[_1dArray.length/8][8]; // 각 회차별로 쪼개기 위해 2차원 배열 생성
+            String[] _1dArray = str.split(",");
+            String[][] _2dArray = new String[_1dArray.length/8][8];
 
-            int idx = 0;                                            // 인덱스값을 위한 초기값
-            for (int i = 0; i < _2dArray.length; i++) {             // 행의 길이만큼 순회하고
-                for (int j = 0; j < _2dArray[i].length; j++)        // 열의 길이만큼 순회하면서
-                    _2dArray[i][j] = _1dArray[idx++];               // 각 행의 열에 값을 채워넣되, idx를 지속적으로 증가시킨다.
+            int idx = 0;
+            for (int i = 0; i < _2dArray.length; i++) {
+                for (int j = 0; j < _2dArray[i].length; j++)
+                    _2dArray[i][j] = _1dArray[idx++];
             }
 
-            String result = "";                                      // 결과를 담을 초기값 생성
-            for (int i = 0; i < _2dArray.length; i++) {              // 행의 길이만큼 순회하고
-                for (int j = 0; j < _2dArray[i].length; j++) {       // 열의 길이만큼 순회하면서
-                    if (Integer.parseInt(_2dArray[i][0]) == num) {   // 각 열의 첫 번째 값이 회차이므로, 그 회차가 사용자가 입력한 값과 같다면
-                        for (int k = 1; k < _2dArray[i].length; k++) // 해당 행의 모든 열을 순회하면서
-                            result += (k < _2dArray[i].length - 1) ? _2dArray[i][k] + ", " : _2dArray[i][k]; // 초기값에 각 값을 더한다.
-                        break; // 그리고 찾았다면 더이상 반복문을 돌 필요가 없기에 break
+            String result = "";
+            for (int i = 0; i < _2dArray.length; i++) {
+                for (int j = 0; j < _2dArray[i].length; j++) {
+                    if (Integer.parseInt(_2dArray[i][0]) == num) {
+                        for (int k = 1; k < _2dArray[i].length; k++)
+                            result += (k < _2dArray[i].length - 1) ? _2dArray[i][k] + ", " : _2dArray[i][k];
+                        break;
                     }
                 }
             }
