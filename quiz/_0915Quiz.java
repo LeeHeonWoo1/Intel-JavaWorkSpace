@@ -62,6 +62,6 @@ public class _0915Quiz {
             System.out.println(i);
         }
 
-
+        scanner.close();
     }
 }
