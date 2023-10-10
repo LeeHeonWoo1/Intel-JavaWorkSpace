@@ -37,7 +37,7 @@ public class ReadPersonInfo {
 
                     System.out.println("---------------입력을 완료했습니다.---------------");
                     try{
-                        Writer os = new FileWriter("./_1006/person_info.txt", true);
+                        Writer os = new FileWriter("quiz/person_info.txt", true);
 
                         os.write(info);
                         os.flush();
@@ -49,7 +49,7 @@ public class ReadPersonInfo {
 
                 case 2:
                     try{
-                        Reader r = new FileReader("./_1006/person_info.txt");
+                        Reader r = new FileReader("quiz/person_info.txt");
                         String infoData = "";
 
                         while(true){
@@ -80,7 +80,7 @@ public class ReadPersonInfo {
                     String name = strScanner.nextLine();
 
                     try{
-                        Reader r1 = new FileReader("./_1006/person_info.txt");
+                        Reader r1 = new FileReader("quiz/person_info.txt");
                         String infoData2 = "";
 
                         while(true){
