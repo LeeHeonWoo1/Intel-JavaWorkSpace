@@ -12,7 +12,7 @@ public class ReadPersonInfo {
 
         while(flag){
             System.out.println("--------------실행화면--------------");
-            System.out.print("1. 입력\n2. 전체출력\n3. 검색\n4. 종료\n\n실행할 메뉴의 번호를 입력하세요 >> ");
+            System.out.print("1. 입력\n2. 전체출력\n3. 검색\n4. 삭제\n5. 종료\n\n실행할 메뉴의 번호를 입력하세요 >> ");
             int menu = intScanner.nextInt();
             switch (menu){
                 case 1:
@@ -127,8 +127,46 @@ public class ReadPersonInfo {
                     break;
 
                 case 4:
+                    System.out.print("삭제하려는 인원의 이름을 입력하세요 : ");
+                    String key = strScanner.nextLine();
+
+                    try{
+                        Reader reader = new FileReader("quiz/person_info.txt");
+
+                        String result = "";
+                        String newData = "";
+
+                        while(true){
+                            int data = reader.read();
+                            if (data == -1) break;
+
+                            result += (char)data;
+                        }
+                        reader.close();
+
+                        if (result.contains(key)) {
+                            Writer writer = new FileWriter("quiz/person_info.txt");
+                            int keysIndex = result.indexOf(key);
+                            result = result.replace(result.substring(keysIndex, result.indexOf("\n", keysIndex) + 1), "");
+                            result = result.substring(0, result.lastIndexOf("\n") + 1);
+
+                            writer.write(result);
+                            System.out.println("삭제를 완료했습니다.");
+                            writer.flush();
+                            writer.close();
+                        }else{
+                            System.out.println("찾고자 하는 인원의 정보가 없습니다.");
+                        }
+
+                    }catch (IOException e){
+                        e.printStackTrace();
+                    }
+                break;
+
+                case 5:
                     flag = false;
                     break;
+
             }
         }
     }
