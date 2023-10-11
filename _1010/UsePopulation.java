@@ -14,27 +14,31 @@ public class UsePopulation {
 
         System.out.println("금정구 전체의 데이터를 다룹니다. 실행할 메뉴의 번호를 입력하세요.");
         while(flag){
-            System.out.print("1. 전체 출력\n2. 동간 최대최소 출력\n3. 동내 최대최소 출력\n4. 종료\n\n>> ");
+            System.out.print("1. 전체 출력\n2. 동간 최대최소 출력\n3. 동내 최대최소 출력\n4. 나이 구간별 최대최소 현황\n5. 종료\n\n>> ");
 
             int menuNum = intScanner.nextInt();
             switch (menuNum){
                 case 1:
                     p.getData();
                     break;
+
                 case 2:
                     p.getMinMax();
                     break;
+
                 case 3:
                     p.getMinMaxIn();
                     break;
+
                 case 4:
+                    p.minMaxPerAge();
+                    break;
+
+                case 5:
                     flag = false;
                     break;
 
             }
         }
-
-
-    // 행정
     }
 }
