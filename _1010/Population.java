@@ -59,10 +59,10 @@ public class Population {
     }
 
     public void getData(){
-        System.out.println("행정기관\t\t\t");
+//        System.out.println("\t\t행정기관\t\t\t");
         for (int i = 0; i < _2DArray.length; i++) {
             for (int j = 0; j < _2DArray[i].length; j++) {
-                System.out.print(_2DArray[i][j] + ((_2DArray[i][0].length() < 5) ? "      " : "   "));
+                System.out.printf((_2DArray[i][0].length() < 5) ? "%10s" : "%9s", _2DArray[i][j]);
             }
             System.out.println();
         }
@@ -120,6 +120,37 @@ public class Population {
             String localMax = (max > 999) ? max+"" : max + " ";
             System.out.println(local + "\t:  " +  localMax + "명        " + min + "명        " + age[maxIdx - 3] + "        " + age[minIdx-3]);
         }
+    }
 
+    public void minMaxPerAge(){
+        int[] minIdx = new int[age.length];
+        int[] maxIdx = new int[age.length];
+
+        for (int i = 0; i < age.length; i++) {
+            // 열 고정, 행을 달리하면서
+            int min;
+            int max = 0;
+
+            for (int j = 1; j < _2DArray.length; j++) {
+                if (max < Integer.parseInt(_2DArray[j][i+3])){
+                    max = j;
+                }
+            }
+            maxIdx[i] = max;
+
+            min = max;
+            for (int j = 1; j < _2DArray.length; j++) {
+                if (Integer.parseInt(_2DArray[j-1][i+3]) > Integer.parseInt(_2DArray[j][i+3])){
+                    min = j;
+                }
+            }
+            minIdx[i] = min;
+        }
+
+        System.out.println("연령\t\t\t최소\t\t최대");
+        for (int i = 0; i < age.length; i++) {
+            String ageLocal = (age[i].length() < 6) ? age[i] + "       " : age[i] + "    ";
+            System.out.println(ageLocal + _2DArray[minIdx[i]][0] + "\t\t" + _2DArray[maxIdx[i]][0]);
+        }
     }
 }
